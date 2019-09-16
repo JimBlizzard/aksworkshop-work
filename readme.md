@@ -669,3 +669,4 @@ Add *mongoHost* and *mongoUser* as variables.
 
 Create an environment *aksworkshop* which is dev
 
+TODO: create a pipeline
