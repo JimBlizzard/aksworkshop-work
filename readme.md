@@ -649,3 +649,23 @@ If you successfully granted Kubernetes authorization to your private registry yo
 ## CI and CD
 
 Hint The source code repositories on GitHub contain an azure-pipelines.yml definition that you can use with Azure Pipelines to build and deploy the containers. See <https://github.com/Azure/azch-captureorder/blob/master/azure-pipelines.yml>
+
+Fork the captureorder project: https://github.com/Azure/azch-captureorder/
+
+Clone it.
+
+Modify the manifests/deployment.yaml file -- use my container registry. "acrForBlizz"
+
+Push the code to github repo: <https://github.com/JimBlizzard/azch-captureorder>
+
+Create an Azure DevOps project: aksworkshopAzDevOps
+
+Multi-stage pipelines and new service coonnections experience are enabled.
+
+Create a docker service connection. Named it *containerRegistryConnection*
+
+Create a variable group called *captureorder-variables* and a *mongoPassword* secret. Click on the Lock icon to make it a secret.
+Add *mongoHost* and *mongoUser* as variables.
+
+Create an environment *aksworkshop* which is dev
+
