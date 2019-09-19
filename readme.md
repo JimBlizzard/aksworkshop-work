@@ -37,10 +37,16 @@ Check the status of the cluster, to see if it has been created. (You can free up
 
 Configure kubectl to connect to the cluster, then verify the connection by listing the nodes and pods. (There shouldn't be any pods yet, but it's fun to check anyway.)
 
+        # Open a browser page to show the kubernetes dashboard
+        az aks browse -n <clusterName> -g <resourceGroup>
+
+        # Connect to an AKS cluster
         az aks get-credentials --resource-group akswsrg --name blizzakscluster02
 
+        # Inspect the nods, pods, and services in the cluster
         kubectl get nodes
         kubectl get pods
+        kubectl get svc  # or kubectl get services 
 
 ## deploy MongoDb
 
